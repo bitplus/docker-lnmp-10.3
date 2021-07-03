@@ -27,9 +27,23 @@ services:
     networks:
        - lnmp-network
        
-  php:
+  php56:
     image: "dtstudio/php:5.6-fpm-alpine"
 #    build: ./php/php56/
+    restart: always
+    volumes:
+     - ./site/:/var/www/html/:rw
+     - ./conf/php/php.ini:/usr/local/etc/php/php.ini:ro
+     - ./conf/php/php-fpm.d/www.conf:/usr/local/etc/php-fpm.d/www.conf:rw
+     - ./log/php-fpm/:/var/log/php-fpm/:rw
+    environment:
+      TZ: "Asia/Shanghai"
+    networks:
+      - lnmp-network
+
+  php73:
+    image: "dtstudio/php:7.3-fpm-alpine"
+#    build: ./php/php73/
     restart: always
     volumes:
      - ./site/:/var/www/html/:rw
@@ -46,6 +60,7 @@ services:
     restart: always
     ports:
        - "8880:80"
+       - "8890:81"
        - "8843:443"
     volumes:
       - ./site/:/var/www/html/:rw
