@@ -48,3 +48,7 @@ If running Docker swarm, the path of directory structure must exist on every swa
 
 
 
+Branch `main` is for Dockerfile updates and [Docker Hub](https://hub.docker.com/r/dtstudio/php) auto build.
+
+Branch `compose` is for normal YAML files updated.
+
