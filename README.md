@@ -1,12 +1,25 @@
-# docker-lnmp-10.3
+# Docker LNMP Environment using MariaDB 10.3
 
 Docker container with Nginx/Adminer/MariaDB 10.3/PHP 5.6/PHP 7.3
 
+Thanks to https://labs.play-with-docker.com/ , we can try the environment easily. Just click below:
 
+[![Try in PWD](https://raw.githubusercontent.com/play-with-docker/stacks/master/assets/images/button.png)](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/bitplus/docker-lnmp-10.3/compose/stack.yml) Then execute commands below:
+
+```shell
+docker stack rm pwd
+git clone https://github.com/bitplus/docker-lnmp-10.3
+cd docker-lnmp-10.3
+bash start.sh
+```
+
+------
 
 Start using docker-compose:
 
 ```bash
+git clone https://github.com/bitplus/docker-lnmp-10.3
+cd docker-lnmp-10.3
 docker-compose up -d
 ```
 
